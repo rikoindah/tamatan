@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Countdown to May 22, 2023</title>
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("May 22, 2023 00:00:00").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+		  // Get today's date and time
+		  var now = new Date().getTime();
+		    
+		  // Find the distance between now and the count down date
+		  var distance = countDownDate - now;
+		    
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		    
+		  // Display the result in the element with id="demo"
+		  document.getElementById("demo").innerHTML = + days + " Hari " ;
+          document.getElementById("demi").innerHTML = + hours + " Jam " ;
+		  
+          document.getElementById("menit").innerHTML = + minutes + " Menit " ;
+          document.getElementById("detik").innerHTML = + seconds + " Detik " ;
+		    
+		  // If the count down is finished, write some text
+		  if (distance < 0) {
+		    clearInterval(x);
+		    document.getElementById("demo").innerHTML = "EXPIRED";
+		  }
+		}, 1000);
+	</script>
+    <style>
+       p {
+        border: 1px solid black;
+		width: 50%;
+		text-align: center;
+		margin-left: 0px;
+		margin-right: 0px;
+		border-radius: 10px;
+		color: blue;   
+		background-color: aqua;
+	
+       }
+	   .grid {
+		display: grid;
+		grid-template-columns: 10ch 10ch 10ch 10ch;
+		
+		
+	   }
+   
+    </style>
+</head>
+<body>
+	<div class="grid">
+		
+			<p id="demo"></p>
+		
+		
+			<p id="demi"></p>
+		
+		
+			<p id="menit"></p>
+		
+		
+			<p id="detik"></p>
+		
+	</div>
+	
+	
+    
+    
+    
+</body>
+</html>
